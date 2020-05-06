@@ -49,7 +49,6 @@ public class FileUtils {
     }
 
     public String readFileByLines(String file) {
-        logger.info(">>>>>>>>>>>> 111111111111111 >>>>>>>>>>>>>>>");
         if (StringUtils.isEmpty(file)) {
             return null;
         }
@@ -59,7 +58,6 @@ public class FileUtils {
         }
         BufferedReader reader = null;
         StringBuffer ret = new StringBuffer();
-        logger.info(">>>>>>>>>>>> 2222222222 >>>>>>>>>>>>>>>");
         try {
             reader = new BufferedReader(new FileReader(f));
             String tempString = null;
