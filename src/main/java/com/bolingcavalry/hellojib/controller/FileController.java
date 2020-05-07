@@ -20,7 +20,7 @@ public class FileController {
     @RequestMapping("/download")
     public String hello(){
         try {
-            new FileUtils().write("uums.sql");
+            new FileUtils().write("hello.sql");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -29,7 +29,7 @@ public class FileController {
 
     @RequestMapping("/read")
     public String read() {
-        String content = new FileUtils().readFileByLines("/whale/file/preset_" + "SENSECITY" + ".sql");
+        String content = new FileUtils().readFileByLines("/usr/local/file/preset_" + "hello" + ".sql");
         return content;
     }
 }
