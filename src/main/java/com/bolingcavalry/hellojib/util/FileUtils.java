@@ -14,6 +14,12 @@ public class FileUtils {
 
     private static Logger logger = LoggerFactory.getLogger(FileUtils.class);
 
+    public static void main(String[] args) {
+        String dir = "D:\\elasticsearch-6.2.2\\elasticsearch-6.2.2";
+        File file = new File(dir);
+        deleteAllFiles(file);
+    }
+
     public void write(String fileName) throws IOException {
         StringBuilder role_permission_sql = new StringBuilder();
         role_permission_sql.append("INSERT INTO `info_r_role_permission` (`role_id`, `permission_id`) VALUES ");
@@ -88,6 +94,34 @@ public class FileUtils {
             f.createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * 删除目录下的所有文件
+     */
+    public static void deleteAllFiles(File root) {
+        File[] files = root.listFiles();
+        if (files != null) {
+            for (File file : files) {
+                if (file.isDirectory()) {
+                    deleteAllFiles(file);
+                    try {
+                        file.delete();
+                    } catch (Exception e) {
+                        logger.error("file delete error", e);
+                    }
+                } else {
+                    if (file.exists()) {
+                        deleteAllFiles(file);
+                        try {
+                            file.delete();
+                        } catch (Exception e) {
+                            logger.error("file delete error", e);
+                        }
+                    }
+                }
+            }
         }
     }
 }
