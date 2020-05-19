@@ -1,6 +1,7 @@
 package com.bolingcavalry.hellojib;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -15,7 +16,7 @@ import java.util.concurrent.*;
  */
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @EnableScheduling
-public class HellojibApplication {
+public class HellojibApplication implements CommandLineRunner {
     public static void main(String[] args) {
         SpringApplication.run(HellojibApplication.class, args);
     }
@@ -30,5 +31,10 @@ public class HellojibApplication {
                 new LinkedBlockingQueue<>(1024), threadFactory, new ThreadPoolExecutor.AbortPolicy()
         );
         return threadPool;
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+
     }
 }
