@@ -1,4 +1,4 @@
-package com.bolingcavalry.hellojib.configure;
+package com.bolingcavalry.hellojib.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

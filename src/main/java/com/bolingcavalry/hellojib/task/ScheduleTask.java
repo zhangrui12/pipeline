@@ -26,14 +26,14 @@ public class ScheduleTask {
     @Scheduled(cron="0 0 2 1 * ? *") ：通过cron表达式定义规则*/
     @Scheduled(fixedRate = 10000)
     public void start() {
-        logger.info("======= 开始做定时任务 ======= 1" + LocalDateTime.now());
+        /*logger.info("======= 开始做定时任务 ======= 1" + LocalDateTime.now());
         logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> 1");
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        logger.info("======= 结束做定时任务 ======= 1" + LocalDateTime.now());
+        logger.info("======= 结束做定时任务 ======= 1" + LocalDateTime.now());*/
     }
 
 

@@ -5,6 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
@@ -16,6 +17,7 @@ import java.util.concurrent.*;
  */
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @EnableScheduling
+@EnableConfigurationProperties
 public class HellojibApplication implements CommandLineRunner {
     public static void main(String[] args) {
         SpringApplication.run(HellojibApplication.class, args);

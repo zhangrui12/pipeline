@@ -18,9 +18,9 @@ public class ScheduleTaskTest {
 
     @Scheduled(fixedRate = 10000)
     public void start() {
-        logger.info("======= 开始做定时任务 ======= 2" + LocalDateTime.now());
+        /*logger.info("======= 开始做定时任务 ======= 2" + LocalDateTime.now());
         logger.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> 2");
-        logger.info("======= 结束做定时任务 ======= 2" + LocalDateTime.now());
+        logger.info("======= 结束做定时任务 ======= 2" + LocalDateTime.now());*/
     }
 
 }
